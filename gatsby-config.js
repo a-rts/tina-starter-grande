@@ -12,6 +12,7 @@ module.exports = {
       options: {
         sidebar: {
           // hidden: process.env.NODE_ENV === "production",
+          // test
           hidden: process.env.NODE_ENV == "production" || process.env.BRANCH !== 'content',
           position: "displace",
           theme: {
