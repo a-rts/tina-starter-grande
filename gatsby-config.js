@@ -12,7 +12,9 @@ module.exports = {
       options: {
         sidebar: {
           // hidden: process.env.NODE_ENV === "production",
-          hidden: process.env.BRANCH !== 'content',
+          // hidden: process.env.BRANCH !== 'content',
+          enabled: true,
+          hidden: false,
           position: "displace",
           theme: {
             color: {
@@ -24,7 +26,20 @@ module.exports = {
             },
           },
         },
-        plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
+        plugins: [
+          {
+            resolve: 'gatsby-tinacms-git',
+            options: {
+              // pathToRepo: REPO_ABSOLUTE_PATH,
+              // pathToContent: 'packages/demo-gatsby',
+              // defaultCommitMessage: 'Edited with TinaCMS',
+              // defaultCommitName: 'TinaCMS',
+              // defaultCommitEmail: 'git@tinacms.org',
+              pushOnCommit: true,
+            },
+          },
+          "gatsby-tinacms-remark"
+        ],
       },
     },
     {
