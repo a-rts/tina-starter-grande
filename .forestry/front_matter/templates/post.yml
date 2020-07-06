@@ -1,4 +1,58 @@
 ---
 label: Post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: path
+  type: text
+  config:
+    required: true
+    min: 7
+  label: Path
+  default: "/blog/"
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: type
+  type: text
+  config:
+    required: true
+  hidden: true
+  label: Type
+  default: post
+- name: draft
+  type: boolean
+  label: Draft
+  default: false
+- name: authors
+  type: select
+  default: ''
+  config:
+    required: false
+    options: []
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Authors
+- name: body
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Body
