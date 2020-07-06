@@ -35,18 +35,6 @@ fields:
   type: boolean
   label: Draft
   default: false
-- name: authors
-  type: select
-  default: ''
-  config:
-    required: false
-    options: []
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Authors
 - name: body
   type: textarea
   default: ''
